@@ -1,0 +1,42 @@
+#添加软件源
+yum install https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+
+#更新
+yum update
+
+#安装postgresql12
+yum install postgresql12
+
+#安装postgresql12-server
+yum install postgresql12-server
+
+#初始化数据库并启动服务
+/usr/pgsql-12/bin/postgresql-12-setup initdb
+systemctl enable postgresql-12
+systemctl start postgresql-12
+
+#创建文件
+/etc/apt/sources.list.d/pgdg.list
+
+#写入以下内容
+deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main
+
+#运行以下两条命令
+wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add
+sudo apt-get update
+
+#安装PostgreSQL12
+apt install postgresql-12
+# TYPE  DATABASE        USER            ADDRESS                 METHOD
+
+# "local" is for Unix domain socket connections only
+local   all             all                                     trust
+# IPv4 local connections:
+host    all             all             127.0.0.1/32            trust
+# IPv6 local connections:
+host    all             all             ::1/128                 trust
+# Allow replication connections from localhost, by a user with the
+# replication privilege.
+local   replication     all                                     trust
+host    replication     all             127.0.0.1/32            trust
+host    replication     all             ::1/128                 trust
