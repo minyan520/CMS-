@@ -1,0 +1,12 @@
+/node_modules/
+/tmp/
+/loadinfo.log
+/data/
+/config/
+/wight/config/
+/wight/log/*.log
+/wight/servnotify/*
+/servnotify/*
+/dev/*
+website/*
+/wight/images/*
