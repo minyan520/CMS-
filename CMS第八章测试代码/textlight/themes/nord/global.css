@@ -1,0 +1,11 @@
+a {
+  color: #4a4a4f;
+}
+
+.drawer-menu-a {
+  color: #424245;
+  padding-left:0.5rem;
+  padding-top:0.8rem;
+  display: block;
+  font-size: 105%;
+}
